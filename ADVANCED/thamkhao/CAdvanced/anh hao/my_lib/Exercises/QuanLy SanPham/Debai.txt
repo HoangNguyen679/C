@@ -1,0 +1,26 @@
+Chương trình quản lí thông tin sản phẩm: 
+Chủ một cửa hàng sản phẩm nhỏ (có ít hơn 100 sản phẩm) muốn quản lí thông tin sản phẩm trong cửa hàng của mình. Các thông tin lưu trữ bao gồm: Mã sản phẩm (maSP) kiểu integer, tên sản phẩm (ten) kiểu xâu kí tự, giá sản phẩm (gia) kiểu integer, số lượng sp (soluong) kiểu integer. Viết chương trình thực hiện lần lượt các yêu cầu sau, (không dùng menu):
+1.Nhập sản phẩm (3 điểm):
+Người dùng gõ bàn phím nhập thông tin sản phẩm. Khi nhập yêu cầu kiểm tra:
+• Mã sản phẩm sau lớn hơn mã sản phẩm trước nó (Lưu ý: Mã sản phẩm có thể mang giá trị âm).
+• Giá sản phẩm dương.
+• Số lượng sp ko âm.
+Nếu các giá trị này nhập sai thì phải yêu cầu nhập lại. Quá trình nhập kết thúc khi người sử dụng nhập vào 1 mã sản phẩm là 0. Thông tin sản phậm nhập vào ghi luôn ra file với tên: "sanpham.txt". Mỗi sản phẩm được lưu trong file này với dòng lệnh định dạng như sau:
+Code:
+<Mã sản phẩm> <Giá> <Số lượng> <Tên>
+VD:
+Code:
+1 20000 10 Keo Lotte
+2 25000 50 Banh kem
+2.Đọc tệp (2 điểm):
+Đọc lại thông tin từ file "sanpham.txt", lưu vào 1 danh sách liên kết. In các nút được tạo trong danh sách ra màn hình theo cấu trúc:
+Code:
+<địa chỉ nút> <Mã sản phẩm> <Giá> <Số lượng> <Tên sản phẩm>
+3.Sắp xếp (2 điểm):
+Tiến hành sắp xếp các phần tử trong danh sách liên kết theo thứ tự tăng dần của giá sản phẩm. Sau đó in lại ra màn hình theo cú pháp giống phần 2.
+4.Tính tổng tiền (1 điểm)
+In tổng tiền của tất cả các sản phẩm có trong cửa hàng. (Giá x Số lượng)
+5. Đếm nhóm sản phẩm trùng giá (1 điểm)
+Đếm xem có tất cả bao nhiêu nhóm sản phẩm trùng giá (Chỉ cần đếm số lượng nhóm, mỗi nhóm có ít nhất 2 sản phẩm)
+6. Kiểm tra sản phẩm trùng tên (1 điểm)
+In ra tên các sản phẩm trong danh sách bị phát hiện là trùng nhau. In ra với cú pháp giống câu 2

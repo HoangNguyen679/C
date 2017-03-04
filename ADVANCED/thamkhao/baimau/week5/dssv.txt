@@ -1,0 +1,5 @@
+Ha_Nam 20112223
+Ha_Noi 20110000
+Quang_Binh 20119999
+Ho_Chi_Minh  20122000
+Da_Nang 20101111

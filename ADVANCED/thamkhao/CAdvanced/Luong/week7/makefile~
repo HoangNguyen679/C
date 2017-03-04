@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS= -g
+OBJS=adjgraph.o
+
+all: testcase2
+
+test: adjgraph.o
+	$(CC) $(CFLAGS) test.c OBJS -o test -Iinc -Llib -lfdr
+
+testcase2:
+	$(CC) $(CFLAGS) testcase2.c OBJS -o testcase2 -Iinc -Llib -lfdr
+
+adjgraph.o:
+	$(CC) $(CFLAGS) -c adjgraph.c -o OBJS -Iinc -Llib -lfdr
+
+clean:
+	rm -rf *.o test testcase2
