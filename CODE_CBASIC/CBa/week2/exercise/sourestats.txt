@@ -1,0 +1,23 @@
+Character a appears 38 times
+ Character b appears 2 times
+ Character c appears 32 times
+ Character d appears 9 times
+ Character e appears 54 times
+ Character f appears 35 times
+ Character g appears 10 times
+ Character h appears 11 times
+ Character i appears 55 times
+ Character l appears 22 times
+ Character m appears 15 times
+ Character n appears 56 times
+ Character o appears 22 times
+ Character p appears 22 times
+ Character r appears 41 times
+ Character s appears 17 times
+ Character t appears 44 times
+ Character u appears 20 times
+ Character v appears 6 times
+ Character w appears 3 times
+ Character x appears 2 times
+ Character y appears 3 times
+ 

@@ -1,0 +1,55 @@
+2Huong dan co ban ve Emacs
+*Ki hieu C-[Ctrl];M-[Alt]*
+1.1 Cac lenh co ban voi file
+    + Tao file:  C-x C-w
+    + Tim va mo file: C-x C-f
+    + Luu file: C-x C-s
+    + Thoat: C-x C-c
+1.2 Cac lenh thao tac voi trang
+    + Len dau file: M-<
+    + Xuong cuoi file: M->
+    + Trang truoc: M-v
+    + Trang tiep: C-v
+    + Len dong tren : C-p
+    + Xuong dong duoi: C-n
+    + Tien len mot tu: M-f
+    + Lui lai mot tu: M-b
+    + Dau dong: C-a
+    + Cuoi dong: C-e
+1.3 Cac thao tac voi phan tu trang
+    + Danh dau: C-space
+    + Delete: C-w
+    + Copy: M-w
+    + Paste: C-y
+    + Undo: C-x u
+    + Tim kiem(tu tren xuong): C-s
+    + Tim kiem(tu duoi len): C-r
+    + Thay the mot chuoi: M-%
+1.4 Cac lenh voi cua so
+    + Thoat ban phim: C-g
+    + Mot cua so: C-x 1
+    + Hai cua so(theo chieu ngang): C-x 2
+    + Hai cua so(theo chieu ngang): C-x 3
+    + Chuyen sang cua so khac: C-x o
+    + Chuyen sang file o bo nho dem: C-x b
+    + Xoa bo nho dem: C-x k
+    + Chuyen sang dang chi doc: C-x C-q
+1.5 Mot so lenh khac: Set cho file ~/.emacs
+    + Set font :
+      (global-font-lock-mode 1 t)
+    + Set time and date:
+      (setq display-time-day-and-date t)
+    + Chan cua so gioi thieu ban dau:
+      (setq inhibit-startup-message t)
+    + Tao phim tat cho goto-line
+      (global-set-key"\C-l"'goto-line);[Ctrl]+[L]
+  *** Tao moi truong lam viec cho C
+      "C mode with adjustment for use with linux kernel"
+      (interactive)
+      (c-mode)
+      (c-set-style "K&R")
+      (setq tab-width 8)
+      (setq indent-tabs-mode t)
+      (setq c-basic-offset 8)
+      (set-cursor-color"red") /*con tro co mau do*/
+      (set-mouse-color"goldenrod")

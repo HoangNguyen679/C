@@ -1,0 +1,13 @@
+HAN="Ha noi"
+SAG="Sai gon"
+DAN="Da nang"
+PUQ="Phu quoc"
+DAL="Da lat"
+HAN SAG 3.0
+HAN DAN 2.5
+HAN DAL 2.7
+SAG DAN 0.5
+SAG DAL 1.0
+PUQ HAN 4.0
+PUQ SAG 2.1
+DAL PUQ 1.8

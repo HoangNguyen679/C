@@ -1,0 +1,21 @@
+#include"w_graph.h"
+void main() {
+  FILE *f;
+  char place1[100], place2[100];
+  int v1, v2, output[MAX_SIZE], n, i;
+  double len;
+  int dis;
+  graph g=createGraph();
+  f=fopen("map.txt", "r");
+  while(!feof(f)) {
+    fscanf(f, "%d %s %d %s %lf\n", &v1, place1, &v2, place2, &len);
+    addVertex(g, v1, place1);
+    addVertex(g, v2, place2);
+    addEdge(g, v1, v2, len);
+  }
+  printf("From %s to %s: ", getVertex(g, 2), getVertex(g, 5));
+  dis=single_pair(g, 2, 5, output, &n);
+  for (i=0; i<n; i++)
+    printf("%s ", getVertex(g, output[i]));
+  printf("\nTotal distance: %d km\n", dis);
+}

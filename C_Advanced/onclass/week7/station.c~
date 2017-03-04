@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "graph_jrb.h"
+#define MAX 81
+
+typedef struct
+{
+  char name[MAX];
+}station;
+
+int main()
+{
+  Graph g = creatGraph();
+
+  char filename[]="line.txt";
+  FILE *f = fopen(filename,"r");
+  if(f == NULL)
+    {printf("Failed open file\n");return 1;}
+  char s[MAX];
+  while(1)
+    {
+      fscanf(f,"%[^\n]\n",s);
+      if(strcmp(s,"[STATIONS]") == 0) break;
+    }
+
+  
+  station *data;
+  int malloc_x = 10;
+  data = (station *)malloc(malloc_x * sizeof(station));
+  int order = 0;
+  
+  while(1)
+    {
+       fscanf(f,"%[\n]\n",s);
+       if(!strcmp(s,"[LINES]")) break;
+       if (strcmp(s, "\n") == 0) continue;
+
+       int i;
+       for (i = 0; s[i] != '\0' && s[i] != '='; i++);
+       if (s[i] == '\0') continue;
+       
+       if(order == 9)
+	 {
+	   malloc_x += 10;
+	   data = (station *)realloc(data, sizeof(station) * malloc_x);
+	 }
+       sscanf(s,"S%*d=%[^\n]\n",data[order++].name);
+    }
+
+  while(!feof(f))
+    {
+      fscanf(f,"%[^\n]\n",s);
+      int i;
+      for (i = 0; s[i] != '\0' && s[i] != '='; i++);
+      if (s[i] == '\0') continue;
+
+      char s2[MAX];
+      sscanf(s, "%*[^=]=%[^\n]", s2);
+      char *p = strtok(s2, " ");
+      int v1 = p[1] - '0';
+      p = strtok(NULL," ");
+      while(p != NULL)
+	{
+	  int v2 = p[1] - '0';
+	  addEdge(g,v1,v2);
+	  v1 = v2;
+	  p = strtok(NULL," ");
+	}
+    }
+  if(g == NULL) printf("1\n");
+  int i;
+  printf("%s\n", "LIST OF METRO STATIONS");
+  for (i = 0; i < order; ++i)
+    {
+      printf("%3d. %s\n", i + 1, data[i].name);
+    }
+  printf("\n\n");
+  
+}

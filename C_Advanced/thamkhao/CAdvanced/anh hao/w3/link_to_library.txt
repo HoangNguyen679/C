@@ -1,0 +1,16 @@
+First: make library:
+$ cd libfdr
+$ make
+
+Second: link source to library:
+$ gcc -c -I /home/hespi/ICT_K56/Source/libfdr w2_Jval.c 
+$ gcc -o test w2_Jval.o
+$ gcc -o test w2_Jval.o ~/ICT_K56/Source/libfdr/libfdr.a 
+
+or simpliest way
+$ gcc -o test main.c -I /home/libfdr /home/libfdr/libfdr.a
+(-I means: include path, -L means: library path)
+
+Run:
+$ ./test
+

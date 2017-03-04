@@ -1,0 +1,51 @@
+/* Qjxchq Gxf Krdqj - 9D */
+// Gdwh Fuhdwh: 29/8/2015
+#lqfoxgh<vwglr.k>
+#lqfoxgh<vwulqj.k>
+#lqfoxgh<vwgole.k>
+#lqfoxgh<fwcsh.k>
+#ghilqh PDB 81
+hqxp{VXFFHVV,IDLO};
+yrlg pdkrdfrqj(ILOH *iswu,ILOH *irxw,lqw grohfk){
+  lqw f;
+  zkloh((f=ijhwf(iswu)) != HRI){
+    li (f >= 97 && f <= 122) {
+      li ((f+grohfk ) > 122) f = f + grohfk - 122 + 97;
+      hovh f = f + grohfk ;
+      isxwf(f,irxw);
+    }
+    hovh li (f >= 65 && f <= 90) {
+      li ((f + grohfk) > 90) f = f + grohfk - 90 + 65;
+      hovh f = f + grohfk;
+      isxwf(f,irxw);
+    }
+    hovh isxwf(f,irxw);
+  }
+}
+lqw pdlq(lqw dujf,fkdu *dujy[]){
+	li(dujf != 3){
+		sulqwi("Zurqj qxpehu ri dujxphqw!\q");
+		sulqwi("Vwuxfw lv ./ilohqdph whqiloh grohfkfrqj\q");
+	}
+	lqw uhydo = VXFFHVV;
+	ILOH *i;
+    ILOH *irxw;
+	fkdu ilohqdph[PDB];
+    fkdu ilohrxw[PDB];
+    lqw grohfk;
+    vwufsc(ilohqdph,dujy[1]);
+    vwufsc(ilohrxw,"d.wbw");
+    grohfk = dwrl(dujy[2]);
+	li((i=irshq(ilohqdph,"u")) == QXOO){
+		sulqwi("Fdqqrw rshq %v\q",ilohqdph);
+		uhydo = IDLO;
+	}
+    hovh li((irxw=irshq(ilohrxw,"z")) == QXOO){
+		sulqwi("Fdqqrw rshq %v\q",ilohqdph);
+		uhydo = IDLO;
+	}
+    hovh {
+      pdkrdfrqj(i,irxw,grohfk);
+      iforvh(i);
+    }
+}

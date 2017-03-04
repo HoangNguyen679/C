@@ -1,0 +1,11 @@
+Xây dựng chương trình giao diện Menu với các chức năng sử dụng thư viện dll.h. 
+Chương trình có chức năng quản lý thông tin sinh viên , điểm-dữ liệu load từ file grade.dat và nhập từ người dùng
+1. import from GRade.dat (insertafter)
+2. Display(tranverse)
+3. Add a new data(insert before/after)
+4. Delete current
+5. Delete first
+6. Delete last
+7 search and update
+8. save to file
+9 quit

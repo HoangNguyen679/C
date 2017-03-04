@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include"jrb.h"
+#include"dllist.h"
+#define MAX_LEN 1000
+typedef JRB graph;
+extern graph createGraph();
+extern void addEdge(graph, int, int);
+extern int adjacent(graph, int, int);
+extern int getAdjacentVertices(graph, int, int*);
+extern void dropGraph(graph);
+extern void DFS(graph, int, int, void(*func)(int));
+extern void BFS(graph, int, int, void(*func)(int));

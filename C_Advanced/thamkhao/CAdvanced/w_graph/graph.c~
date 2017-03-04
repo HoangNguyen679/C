@@ -1,0 +1,111 @@
+#include"graph.h"
+graph createGraph() {
+  return make_jrb();
+}
+void addEdge(graph g, int v1, int v2) {
+  JRB node, tree;
+  if ((node=jrb_find_int(g, v1))==NULL) {
+    tree=make_jrb();
+    jrb_insert_int(g, v1, new_jval_v(tree));
+    jrb_insert_int(tree, v2, new_jval_i(1)); 
+  }
+  else {
+    tree=(JRB)jval_v(node->val);
+    if (jrb_find_int(tree, v2)==NULL)
+      jrb_insert_int(tree, v2, new_jval_i(1)); 
+  }
+  if ((node=jrb_find_int(g, v2))==NULL) {
+    tree=make_jrb();
+    jrb_insert_int(g, v2, new_jval_v(tree));
+    jrb_insert_int(tree, v1, new_jval_i(1)); 
+  }
+  else {
+    tree=(JRB)jval_v(node->val);
+    if (jrb_find_int(tree, v1)==NULL)
+      jrb_insert_int(tree, v1, new_jval_i(1)); 
+  }
+}
+int adjacent(graph g, int v1, int v2) {
+  JRB node, tree;
+  if ((node=jrb_find_int(g, v1))!=NULL) { 
+    tree=(JRB)jval_v(node->val);
+    if (jrb_find_int(tree, v2)==NULL)
+      return 0;
+    else 
+      return 1;
+  }
+  else if ((node=jrb_find_int(g, v2))!=NULL) {
+    tree=(JRB)jval_v(node->val);
+    if (jrb_find_int(tree, v1)==NULL)
+      return 0;
+    else 
+      return 1;
+  }
+  else 
+    return 0;
+} 
+int getAdjacentVertices(graph g, int v, int *output) {
+  JRB node, tree;
+  int i=0;
+  if ((node=jrb_find_int(g, v))==NULL) 
+    return 0;
+  else {
+    tree=(JRB)jval_v(node->val);
+    jrb_traverse(node, tree) {
+      output[i++]=jval_i(node->key);
+    }
+  }
+  return i;
+}
+void dropGraph(graph g) {
+  JRB node;
+  jrb_traverse(node, g) {
+    jrb_free_tree(jval_v(node->val));
+  }
+}
+void BFS(graph g, int v1, int v2, void(*func)(int)) {
+  Dllist queue=new_dllist();
+  Dllist node;
+  int visited[MAX_LEN];
+  int output[MAX_LEN];
+  int i, n, x;
+  for (i=0; i<=MAX_LEN; i++)
+    visited[i]=0;
+  dll_append(queue, new_jval_i(v1));
+  while (!dll_empty(queue)) {
+    node=dll_first(queue);
+    x=jval_i(node->val);
+    visited[x]=1;
+    func(x);
+    if (x==v2)
+      break;
+    n=getAdjacentVertices(g, x, output);
+    for (i=0; i<n; i++) 
+      if (visited[output[i]]==0)
+	dll_append(queue, new_jval_i(output[i]));
+    dll_delete_node(node);
+  }
+}
+void DFS(graph g, int v1, int v2, void(*func)(int)) {
+  Dllist queue=new_dllist();
+  Dllist node;
+  int visited[MAX_LEN];
+  int output[MAX_LEN];
+  int i, n, x;
+  for (i=0; i<=MAX_LEN; i++)
+    visited[i]=0;
+  dll_append(queue, new_jval_i(v1));
+  while (!dll_empty(queue)) {
+    node=dll_last(queue);
+    x=jval_i(node->val);
+    visited[x]=1;
+    func(x);
+    if (x==v2)
+      break;
+    n=getAdjacentVertices(g, x, output);
+    for (i=0; i<n; i++) 
+      if (visited[output[i]]==0)
+	dll_append(queue, new_jval_i(output[i]));
+    dll_delete_node(node);
+  }
+}

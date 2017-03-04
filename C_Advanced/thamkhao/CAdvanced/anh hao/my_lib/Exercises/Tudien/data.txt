@@ -1,0 +1,21 @@
+and	va
+book	sach
+camera	may anh
+chicken	ga
+computer	may tinh
+dog	cho
+english	tieng anh
+genius	thien tai
+hate	ghet
+i	toi
+like	thich
+love	yeu
+phone	dien thoai
+school	truong hoc
+stupid	ngu
+train	tau hoa
+vietnamese	tieng viet
+you	ban
+he	anh ay
+she	chi ay
+them	ho

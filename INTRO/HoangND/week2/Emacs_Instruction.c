@@ -1,0 +1,63 @@
+#include<stdio.h>
+main()
+{
+  printf("-------------Emacs Commands Tutor-------------\n");
+  printf("           Author: Nguyen Duc Hoang \n ");
+  printf("Huong dan co ban ve Emacs\n""*Ki hieu C-[Ctrl];M-[Alt]*\n");
+  printf(" 1.1 Cac lenh co ban voi file\n");
+  printf("  + Tao file:  C-x C-w\n");
+  printf("  + Tim va mo file: C-x C-f\n");
+  printf("  + Luu file: C-x C-s\n");
+  printf("  + Thoat: C-x C-c\n");
+  printf("1.2 Cac lenh thao tac voi trang\n");
+  printf("  + Len dau file: M-<\n");
+  printf("  + Xuong cuoi file: M->\n");
+  printf("    + Trang truoc: M-v\n");
+  printf("    + Trang tiep: C-v\n");
+  printf("    + Len dong tren : C-p\n");
+  printf("    + Xuong dong duoi: C-n\n");
+  printf("    + Tien len mot tu: M-f\n");
+  printf("    + Lui lai mot tu: M-b\n");
+  printf("    + Dau dong: C-a\n");
+  printf("    + Cuoi dong: C-e\n");
+  printf("1.3 Cac thao tac voi phan tu trang\n");
+  printf("    + Danh dau: C-space\n");
+  printf("    + Delete: C-w\n");
+  printf("    + Copy: M-w\n");
+  printf("    + Paste: C-y\n");
+  printf("    + Undo: C-x u\n");
+  printf("    + Tim kiem(tu tren xuong): C-s\n");
+  printf("    + Tim kiem(tu duoi len): C-r\n");
+  printf("    + Thay the mot chuoi: M- \n ");
+  printf("1.4 Cac lenh voi cua so\n");
+  printf("    + Thoat ban phim: C-g\n");
+  printf("    + Mot cua so: C-x 1\n");
+  printf("    + Hai cua so(theo chieu ngang): C-x 2\n");
+  printf("    + Hai cua so(theo chieu ngang): C-x 3\n");
+  printf("    + Chuyen sang cua so khac: C-x o\n");
+  printf("    + Chuyen sang file o bo nho dem: C-x b\n");
+  printf("    + Xoa bo nho dem: C-x k\n");
+  printf("    + Chuyen sang dang chi doc: C-x C-q\n");
+  printf("1.5 Mot so lenh khac: Set cho file ~/.emacs\n");
+  printf("    + Set font :\n");
+  printf("      (global-font-lock-mode 1 t)\n");
+  printf("    + Set time and date:\n");
+  printf("      (setq display-time-day-and-date t)\n");
+  printf("    + Chan cua so gioi thieu ban dau:\n");
+  printf("      (setq inhibit-startup-message t)\n");
+  printf("    + Tao phim tat cho goto-line\n");
+  printf("      (global-set-key");
+  printf(" C-l");
+  printf("'goto-line);[Ctrl]+[L]\n");
+  printf("  *** Tao moi truong lam viec cho C\n");
+  printf("       C mode with adjustment for use with linux kernel\n");
+  printf("      (interactive)\n");
+  printf("      (c-mode)\n");
+  printf("      (c-set-style ""K&R"")\n");
+  printf("      (setq tab-width 8)\n");
+  printf("      (setq indent-tabs-mode t)\n");
+  printf("      (setq c-basic-offset 8)\n");
+  printf("      (set-cursor-color""red"") /*con tro co mau do*/\n");
+  printf("      (set-mouse-color""goldenrod"")\n");
+
+}
